@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>{{ offer.title }}</p>
+    <p>{{ offer.refNumber }}</p>
+    <p>{{ offer.smallDesc }}</p>
+    <ul>
+        {%  for desc in offer.desc %}
+            <p>{{ desc.title }}</p>
+            {% for val in desc.paragraphs %}
+                <li>{{ val }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+
+    <a href="{{ offer.link }}">APLIKUJ!</a>
+    <a href="{{ path('offers') }}">POWRÓT</a>
+{% endblock %}
